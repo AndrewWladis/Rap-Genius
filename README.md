@@ -2,7 +2,7 @@
 Python AI Rap Battle is a browswer that enables the user to enter two characters to participate in a rap battle. Using API keys, ChatGPT3, a tool for natural language processing, produces the rap's lyrics. A photo engine called Unsplash Developers creates the images of the subjects using API keys. 
 
 ## How to Use
-This code can be accessed by the user through the website.
+This code can be accessed by the user through the website https://rap-genius.onrender.com.
 
 
 To start the rap battle, input two characters after prompted by the AI.
