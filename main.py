@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, jsonify
 import random
 from ai_req import ai_req
-#from database_functions import top_five, update_rapper_score
+from waitress import serve
+# from database_functions import return_all, update_rapper_score
 
 def get_two_random_items(characters):
     random_items = random.sample(characters, 2)
@@ -23,22 +24,8 @@ def get_rap():
     response = ai_req(character_one, character_two)
     return jsonify(response)
 
-"""@app.route('/up-vote', methods=['POST'])
-def up_vote_rapper():
-    data = request.json
-    rapper = data.get('rapper')
-    update_rapper_score(rapper)
-    return jsonify({
-        "rapper": rapper,
-        "code": "success"
-    })
-
-@app.route('/top-five', methods=['POST'])
-def top_five_rapper():
-    return jsonify(top_five())"""
-
-# app.config["TEMPLATES_AUTO_RELOAD"] = True
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 if __name__ == '__main__':
-    from waitress import serve
     serve(app, host="0.0.0.0", port=8080)
+   # app.run()

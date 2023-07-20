@@ -17,7 +17,7 @@
         }
 
         body {
-            background-color: #9DBBAE;
+            background: radial-gradient(circle, rgba(23,23,23,1) 0%, rgba(0,0,0,1) 100%);
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -31,7 +31,7 @@
         .container {
             max-width: 800px;
             padding: 20px;
-            background-color: #188FA7;
+            background-color: transparent;
             text-align: center;
             color: #fff;
             width: 100vw;
@@ -39,14 +39,14 @@
         }
 
         h1 {
-            font-size: 50px;
+            font-size: 110px;
             margin-bottom: 15px;
             letter-spacing: 2px;
             font-family: 'Poller One', cursive;
         }
 
         h3 {
-            font-size: 21px;
+            font-size: 22px;
             font-family: 'Outfit', sans-serif;
         }
 
@@ -55,19 +55,22 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
+            flex-wrap:wrap;
+            width: 100%;
         }
 
         .input-container input {
             flex-grow: 1;
             padding: 15px;
-            font-size: 18px;
+            margin-top: 15px;
+            font-size: 30px;
             border: none;
             border-radius: 20px;
-            margin: 0 10px;
+            margin-left: 10px;
+            margin-right: 10px;
             background-color: rgba(255, 255, 255, 0.2);
             color: #fff;
             outline: none;
-            width: 45%;
         }
 
         .loading-circle {
@@ -96,18 +99,17 @@
         .buttons-container button {
             padding: 15px 30px;
             font-size: 18px;
-            background-color: #fff;
+            background-color: #777777;
             border: none;
             border-radius: 20px;
-            color: #769FB6;
+            color: black;
             cursor: pointer;
             outline: none;
             transition: background-color 0.3s ease;
         }
 
         .buttons-container button:hover {
-            background-color: #769FB6;
-            color: #fff;
+            background-color: #fff;
         }
 
         #battle-result {
@@ -125,21 +127,22 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #188FA7;
-            color: #fff;
-            border: none;
-            padding: 5px 8px;
-            border-radius: 5%;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            font-size: 21px;
             cursor: pointer;
             font-family: 'Outfit', sans-serif;
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #777777;
+            border: none;
+            border-radius: 20px;
+            color: black;
+            cursor: pointer;
+            outline: none;
             transition: background-color 0.3s ease;
         }
 
         .floating-button:hover {
-            background-color: #769FB6;
-            color: #fff;
+            background-color: white;
         }
 
         #battle-result div {
@@ -189,8 +192,8 @@
         <h1>Rap Genius</h1>
         <h3>Epic fictitious rap battles, harnessing ChatGPT technology and powered by Flask</h3>
         <div class="input-container">
-            <input type="text" id="artist1" placeholder="{{ artists[0] }}" />
-            <input type="text" id="artist2" placeholder="{{ artists[1] }}" />
+            <input type="text" id="artist1" autocomplete="off" placeholder="{{ artists[0] }}" />
+            <input type="text" id="artist2" autocomplete="off" placeholder="{{ artists[1] }}" />
         </div>
         <div class="buttons-container">
             <button onclick="getRandomCharacters()">Random Characters</button>

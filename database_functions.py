@@ -14,6 +14,7 @@ cursor.execute('''
 ''')
 
 def update_rapper_score(rapper):
+    rapper = rapper.lower().strip()
     # Check if the rapper already exists in the database
     cursor.execute('SELECT * FROM rappers WHERE name = ?', (rapper,))
     result = cursor.fetchone()
@@ -29,4 +30,9 @@ def update_rapper_score(rapper):
     # Commit the changes to the database
     conn.commit()
 
+
+def return_all():
+    update_rapper_score('Batman')
+    all = cursor.execute('SELECT * FROM rappers')
+    return all
 
