@@ -5,7 +5,24 @@
     <title>Rap Genius</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit&family=Poller+One&family=Rubik&display=swap');
-        
+
+        @keyframes loadingAnimation {
+            0% {
+                background-color: #f0f0f0;
+                /* Light gray */
+            }
+
+            50% {
+                background-color: #d0d0d0;
+                /* Slightly darker gray */
+            }
+
+            100% {
+                background-color: #f0f0f0;
+                /* Light gray again */
+            }
+        }
+
         @keyframes spin {
             0% {
                 transform: rotate(0deg);
@@ -17,7 +34,7 @@
         }
 
         body {
-            background: radial-gradient(circle, rgba(23,23,23,1) 0%, rgba(0,0,0,1) 100%);
+            background: radial-gradient(circle, rgba(23, 23, 23, 1) 0%, rgba(0, 0, 0, 1) 100%);
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -55,7 +72,7 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-            flex-wrap:wrap;
+            flex-wrap: wrap;
             width: 100%;
         }
 
@@ -147,7 +164,6 @@
 
         #battle-result div {
             width: 100%;
-            padding: 10px;
             display: flex;
         }
 
@@ -168,7 +184,7 @@
             padding: 10px;
             color: #FFFFFF;
         }
-        
+
         #battle-result div:first-child {
             background-color: transparent;
         }
@@ -264,8 +280,8 @@
             document.body.style.alignItems = null;
             let arena = document.createElement('div')
             arena.id = "battle-result"
-            
-            //create loader
+
+            //create spinner
             let loading_container = document.createElement('div')
             let loading_circle = document.createElement('div')
             loading_container.classList.add("loading-container")
@@ -279,4 +295,5 @@
         }
     </script>
 </body>
+
 </html>
